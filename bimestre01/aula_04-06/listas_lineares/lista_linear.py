@@ -1,4 +1,4 @@
-class ListaLinear:
+class ListaLinearContigua:
     def __init__(self, max: int):
         self.max = max
         self.vetor = [None] * self.max
@@ -94,7 +94,23 @@ class ListaLinear:
         
         return True
 
-                    
-            
+    def buscar(self, dado):
+        if self.is_vazio():
+            return False
         
+        for idx, node in enumerate(self.vetor):
+            if node == dado:
+                return idx-self.ini+1
+
+        return False
     
+    def consultar(self, pos):
+        if pos > self.tamanho() or pos < 1:
+            return False
+        
+        return self.vetor[pos + self.ini - 1]
+
+    def limpar(self):
+        for i in range(len(self.vetor)):
+            if self.vetor[i] != None:
+                self.vetor[i] = None

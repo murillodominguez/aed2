@@ -1,6 +1,6 @@
-from lista_linear import ListaLinear
+from lista_linear import ListaLinearContigua
 
-lista = ListaLinear(5)
+lista = ListaLinearContigua(5)
 
 lista.inserir(1,1)
 lista.inserir(2,2)
@@ -22,5 +22,4 @@ lista.remover(2)
 lista.exibir()
 lista.remover(3)
 lista.exibir()
-lista.inserir(2, 10)
-lista.exibir()
+print(lista.consultar(2))
